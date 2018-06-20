@@ -24,23 +24,23 @@
             q: q
         },
         function (data) {
-            var searchResultsHTML = "<tr><td>FEATURE NAME</td><td>FEATURE CLASS</td>";
-            searchResultsHTML += "<td>STATE ALPHA</td><td>COUNTY_NAME</td>";
-            searchResultsHTML += "<td>Elevation (m)</td><td>Elevation (ft)</td><td>MAP NAME</td>";
-            searchResultsHTML += "<td>DESCRIPTION</td><td>HISTORY</td><td>DATE CREATED</td>";
-            searchResultsHTML += "<td>DATE EDITED</td></tr>";
+            var searchResultsHTML = "<tr><td>Id</td><td>Name</td>";
+            searchResultsHTML += "<td>Category</td><td>Description</td>";
+            searchResultsHTML += "<td>ReleaseDate</td><td>RunLength</td>";
+            searchResultsHTML += "<td>UserRating</td><td>Type</td></tr>";
+            //searchResultsHTML += "<td>DATE EDITED</td></tr>";
             for (var i = 0; i < data.length; i++) {
-                searchResultsHTML += "<td>" + data[i].Document.FEATURE_NAME + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.FEATURE_CLASS + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.STATE_ALPHA + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.COUNTY_NAME + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.ELEV_IN_M + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.ELEV_IN_FT + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.MAP_NAME + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.DESCRIPTION + "</td>";
-                searchResultsHTML += "<td>" + data[i].Document.HISTORY + "</td>";
-                searchResultsHTML += "<td>" + parseJsonDate(data[i].Document.DATE_CREATED) + "</td>";
-                searchResultsHTML += "<td>" + parseJsonDate(data[i].Document.DATE_EDITED) + "</td></tr>";
+                searchResultsHTML += "<td>" + data[i].Document.Id + "</td>";
+                searchResultsHTML += "<td>" + data[i].Document.Name + "</td>";
+                searchResultsHTML += "<td>" + data[i].Document.Category + "</td>";
+                searchResultsHTML += "<td>" + data[i].Document.Description+ "</td></tr>";
+                searchResultsHTML += "<td>" + data[i].Document.ReleaseDate + "</td>";
+                searchResultsHTML += "<td>" + data[i].Document.RunLength + "</td>";
+                searchResultsHTML += "<td>" + data[i].Document.UserRating + "</td>";
+                searchResultsHTML += "<td>" + data[i].Document.Type + "</td></tr>";
+                //searchResultsHTML += "<td>" + data[i].Document.HISTORY + "</td>";
+                //searchResultsHTML += "<td>" + parseJsonDate(data[i].Document.DATE_CREATED) + "</td>";
+                //searchResultsHTML += "<td>" + parseJsonDate(data[i].Document.DATE_EDITED) + "</td></tr>";
             }
 
             $("#searchResults").html(searchResultsHTML);
@@ -56,7 +56,7 @@
     };
 
 </script>
-<h2>USGS Features Search for Rhode Island</h2>
+<h2>Interpreter Intelligence Search</h2>
 
 <div class="container">
         <input type="search" name="q" id="q" autocomplete="off" size="100"  /> <button onclick="Search();">Search</button>
